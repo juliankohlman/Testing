@@ -1,6 +1,5 @@
 const assert = require('chai').assert;
 const funcs = require('../src/project-1');
-const sinon = require('sinon');
 // we've gone ahead and gotten a start here for you, except,
 // for some reason, none of our current
 // assertions are working. first step is to make sure all
@@ -12,7 +11,6 @@ const sinon = require('sinon');
 // is of a specified type,  as well as the correct outcome.
 
 describe('Project-1 Functions', () => {
-
   describe('`multiplyByTen`', () => {
     const multiplyByTen = funcs.multiplyByTen;
 
@@ -22,21 +20,21 @@ describe('Project-1 Functions', () => {
 
     it('should return a number', () => {
       assert.typeOf(multiplyByTen(10), 'number');
-    })
+    });
 
     it('should return zero when input is zero', () => {
       assert.equal(multiplyByTen(0), 0);
-    })
+    });
 
     it('should return a negative number when input is negative', () => {
       assert.equal(multiplyByTen(-0.1), -1);
-    })
+    });
 
     it('it should return the correct answer', () => {
       const num = Math.floor(Math.random() * Math.floor(10)) + 1;
       const ans = num * 10;
       assert.equal(multiplyByTen(num), ans);
-    })
+    });
   });
 
   describe('`subtractFive`', () => {
@@ -47,23 +45,23 @@ describe('Project-1 Functions', () => {
 
     it('should return a number', () => {
       assert.typeOf(subtractFive(10), 'number');
-    })
+    });
 
     it('should return same number when input is zero', () => {
       assert.equal(subtractFive(0), 0 - 5);
-    })
+    });
 
     it('it should return the correct answer', () => {
       const num = Math.floor(Math.random() * Math.floor(10)) + 1;
       const ans = num - 5;
       assert.equal(subtractFive(num), ans);
-    })
+    });
 
     it('it should return the correct answer', () => {
       const num = 0 - Math.floor(Math.random() * Math.floor(10)) + 1;
       const ans = num - 5;
       assert.equal(subtractFive(num), ans);
-    })
+    });
   });
 
   describe('`areSameLength`', () => {
@@ -73,16 +71,16 @@ describe('Project-1 Functions', () => {
     });
 
     it('should return a boolean', () => {
-      assert.typeOf(areSameLength('', ''), 'boolean')
-    })
+      assert.typeOf(areSameLength('', ''), 'boolean');
+    });
 
     it('should return the correct answer', () => {
-      assert.equal(areSameLength('foo', 'bar'), true)
-    })
+      assert.equal(areSameLength('foo', 'bar'), true);
+    });
 
     it('should return the correct answer', () => {
-      assert.equal(areSameLength('foo', 'hello'), false)
-    })
+      assert.equal(areSameLength('foo', 'hello'), false);
+    });
   });
 
   describe('`areEqual`', () => {
@@ -92,87 +90,197 @@ describe('Project-1 Functions', () => {
     });
 
     it('should return a boolean', () => {
-      assert.typeOf(areEqual('', ''), 'boolean')
-    })
+      assert.typeOf(areEqual('', ''), 'boolean');
+    });
 
     it('should return the correct answer for strings', () => {
-      assert.equal(areEqual('foo', 'foo'), true)
-    })
+      assert.equal(areEqual('foo', 'foo'), true);
+    });
 
     it('should return the correct answer for strings', () => {
-      assert.equal(areEqual('foo', 'hello'), false)
-
-    })
-
-    it('should return the correct answer for numbers', () => {
-      assert.equal(areEqual(3, 3), true)
-    })
+      assert.equal(areEqual('foo', 'hello'), false);
+    });
 
     it('should return the correct answer for numbers', () => {
-      assert.equal(areEqual(11, 2), false)
-    })
+      assert.equal(areEqual(3, 3), true);
+    });
+
+    it('should return the correct answer for numbers', () => {
+      assert.equal(areEqual(11, 2), false);
+    });
   });
 
   describe('`lessThanNinety`', () => {
+    const lessThanNinety = funcs.lessThanNinety;
+
     it('should be a function', () => {
-      const lessThanNinety = funcs.lessThanNinety;
       assert.typeOf(lessThanNinety, 'function');
+    });
+
+    it('should return a boolean', () => {
+      assert.typeOf(lessThanNinety(1), 'boolean');
+    });
+
+    it('should return the correct answer', () => {
+      assert.equal(lessThanNinety(100), false);
+    });
+
+    it('should return the correct answer', () => {
+      assert.equal(lessThanNinety(89), true);
     });
   });
 
   describe('`greaterThanFifty`', () => {
+    const greaterThanFifty = funcs.greaterThanFifty;
+
     it('should be a function', () => {
-      const greaterThanFifty = funcs.greaterThanFifty;
       assert.typeOf(greaterThanFifty, 'function');
+    });
+
+    it('should return a boolean', () => {
+      assert.typeOf(greaterThanFifty(1), 'boolean');
+    });
+
+    it('should return the correct answer', () => {
+      assert.equal(greaterThanFifty(51), true);
+    });
+
+    it('should return the correct answer', () => {
+      assert.equal(greaterThanFifty(49), false);
     });
   });
 
   describe('`add`', () => {
+    const add = funcs.add;
+
     it('should be a function', () => {
-      const add = funcs.add;
       assert.typeOf(add, 'function');
+    });
+
+    it('should return a number', () => {
+      assert.typeOf(add(0, 0), 'number');
+    });
+
+    it('should return the correct answer', () => {
+      assert.equal(add(5, 1), 6);
     });
   });
 
   describe('`subtract`', () => {
+    const subtract = funcs.subtract;
+
     it('should be a function', () => {
-      const subtract = funcs.subtract;
       assert.typeOf(subtract, 'function');
+    });
+
+    it('should return a number', () => {
+      assert.typeOf(subtract(0, 0), 'number');
+    });
+
+    it('should return the correct answer', () => {
+      assert.equal(subtract(5, 1), 4);
     });
   });
 
   describe('`divide`', () => {
+    const divide = funcs.divide;
+
     it('should be a function', () => {
-      const divide = funcs.divide;
       assert.typeOf(divide, 'function');
+    });
+
+    it('should return a number', () => {
+      assert.typeOf(divide(1, 1), 'number');
+    });
+
+    it('should return the correct answer', () => {
+      assert.equal(divide(10, 2), 5);
+    });
+
+    it('should return Infinity when dividing by zero', () => {
+      assert.equal(divide(1, 0), Infinity);
     });
   });
 
   describe('`multiply`', () => {
+    const multiply = funcs.multiply;
+
     it('should be a function', () => {
-      const multiply = funcs.multiply;
       assert.typeOf(multiply, 'function');
+    });
+
+    it('should return a number', () => {
+      assert.typeOf(multiply(1, 1), 'number');
+    });
+
+    it('should return the correct answer', () => {
+      assert.equal(multiply(2, 5), 10);
+    });
+
+    it('should return zero when multiplying by zero', () => {
+      assert.equal(multiply(1, 0), 0);
     });
   });
 
   describe('`getRemainder`', () => {
+    const getRemainder = funcs.getRemainder;
+
     it('should be a function', () => {
-      const getRemainder = funcs.getRemainder;
       assert.typeOf(getRemainder, 'function');
+    });
+
+    it('should return a number', () => {
+      assert.typeOf(getRemainder(10, 2), 'number');
+    });
+
+    it('should return the correct answer', () => {
+      assert.equal(getRemainder(11, 2), 1);
+    });
+
+    it('should return NaN when dividing by zero', () => {
+      assert.isNaN(
+        getRemainder(1, 0),
+        'Cannot get a remainder from dividing by zero.',
+      );
     });
   });
 
   describe('`isEven`', () => {
+    const isEven = funcs.isEven;
+
     it('should be a function', () => {
-      const isEven = funcs.isEven;
       assert.typeOf(isEven, 'function');
+    });
+
+    it('should return a boolean', () => {
+      assert.isBoolean(isEven(1));
+    });
+
+    it('should return the correct answer', () => {
+      assert.equal(isEven(50), true);
+    });
+
+    it('should return the correct answer', () => {
+      assert.equal(isEven(49), false);
     });
   });
 
   describe('`isOdd`', () => {
+    const isOdd = funcs.isOdd;
+
     it('should be a function', () => {
-      const isOdd = funcs.isOdd;
       assert.typeOf(isOdd, 'function');
+    });
+
+    it('should return a boolean', () => {
+      assert.isBoolean(isOdd(1));
+    });
+
+    it('should return the correct answer', () => {
+      assert.equal(isOdd(49), true);
+    });
+    it('should return the correct answer', () => {
+      assert.equal(isOdd(50), false);
     });
   });
 

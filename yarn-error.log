@@ -1,14 +1,14 @@
 Arguments: 
-  /usr/local/Cellar/node/9.6.1/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js run watch basic-javascript/tests/project-1.test.js
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js run watch basic-javascript/tests/project-1.test.js
 
 PATH: 
-  /Users/juliankohlman/.rbenv/bin:/Users/juliankohlman/.rbenv/shims:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/juliankohlman/Desktop/nand2tetris/tools
+  /Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/mysql/bin/:/usr/local/mysql/bin/
 
 Yarn version: 
   1.5.1
 
 Node version: 
-  9.6.1
+  9.7.1
 
 Platform: 
   darwin x64
@@ -36,8 +36,8 @@ npm manifest:
       "sinon-chai": "^2.12.0"
     },
     "dependencies": {
-      "babel-preset-es2015": "^6.24.0"
-      // "eslint-config-airbnb": "^16.1.0"
+      "babel-preset-es2015": "^6.24.0",
+      "eslint-config-airbnb": "^16.1.0"
     }
   }
 
@@ -1623,10 +1623,16 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/yallist/-/yallist-2.1.2.tgz#1c11f9218f076089a47dd512f93c6699a6a81d52"
 
 Trace: 
-  SyntaxError: /Users/juliankohlman/Desktop/CS6/Week_13_Testing/Testing/package.json: Unexpected token / in JSON at position 594
-      at JSON.parse (<anonymous>)
-      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:1036:59
-      at Generator.next (<anonymous>)
-      at step (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:98:30)
-      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:109:13
-      at <anonymous>
+  Error: Command failed.
+  Exit code: 127
+  Command: sh
+  Arguments: -c mocha -R nyan --watch basic-javascript/tests/project-1.test.js
+  Directory: /Users/SamuelCha/Documents/Lambda School/13/pp/Testing
+  Output:
+  
+      at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:30281:17)
+      at ChildProcess.emit (events.js:127:13)
+      at maybeClose (internal/child_process.js:936:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)
