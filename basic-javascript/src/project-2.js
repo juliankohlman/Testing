@@ -26,6 +26,7 @@ const isTenOrFive = num => {
 };
 
 const isInRange = num => {
+  if (!Number.isInteger(num)) return false;
   if (num < 50 && num > 20) {
     return true;
   }

@@ -4,124 +4,222 @@ const funcs = require('../src/project-2');
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 describe('Tests for Project-2 Functions', () => {
   describe('`getBiggest`', () => {
+    const getBiggest = funcs.getBiggest;
     it('should be a function', () => {
-      const getBiggest = funcs.getBiggest;
       assert.typeOf(getBiggest, 'function');
     });
+    it('should return one of the values', () => {
+      assert.equal(getBiggest(0, 1), 1)
+    })
+    it('should return the correct answer', () => {
+      assert.equal(getBiggest('', 'foo'), 'foo');
+    })
   });
-  // begin here
+
   describe('`greeting`', () => {
+    const greeting = funcs.greeting;
     it('should be a function', () => {
-      const greeting = funcs.greeting;
       assert.typeOf(greeting, 'function');
     });
+    it('should return a string', () => {
+      assert.isString(greeting(''));
+    })
+    it('should return the correct answer', () => {
+      assert.equal(greeting('German'), 'Guten Tag!');
+    })
+    it('should return the correct answer', () => {
+      assert.equal(greeting('Spanish'), 'Hola!');
+    })
+    it('should return the correct answer', () => {
+      assert.equal(greeting(), 'Hello!');
+    })
   });
-  // begin here
+
   describe('`isTenOrFive`', () => {
+    const isTenOrFive = funcs.isTenOrFive;
     it('should be a function', () => {
-      const isTenOrFive = funcs.isTenOrFive;
       assert.typeOf(isTenOrFive, 'function');
     });
+
+    it('should return a boolean', () => {
+      assert.isBoolean(isTenOrFive());
+    })
+
+    it('should return the correct answer', () => {
+      assert.equal(isTenOrFive(10), true);
+    })
+    it('should return the correct answer', () => {
+      assert.equal(isTenOrFive(5), true);
+    })
+    it('should return the correct answer', () => {
+      assert.equal(isTenOrFive(), false);
+    })
+    it('should return the correct answer', () => {
+      assert.equal(isTenOrFive('not five or ten'), false);
+    })
+
   });
-  // begin here
+
+
   describe('`isInRange`', () => {
+    const isInRange = funcs.isInRange;
     it('should be a function', () => {
-      const isInRange = funcs.isInRange;
       assert.typeOf(isInRange, 'function');
     });
+    it('should return a boolean', () => {
+      assert.isBoolean(isInRange(0))
+    })
+    it('should return the correct answer', () => {
+      assert.equal(isInRange(19), false);
+    })
+    it('should return the correct answer', () => {
+      assert.equal(isInRange(49), true);
+    })
+    it('should return the correct answer', () => {
+      assert.equal(isInRange(51), false);
+    })
+    it('should return the correct answer', () => {
+      assert.equal(isInRange('21'), false);
+    })
   });
-  // begin here
+
+
   describe('`isInteger`', () => {
+    const isInteger = funcs.isInteger;
+
     it('should be a function', () => {
-      const isInteger = funcs.isInteger;
       assert.typeOf(isInteger, 'function');
     });
+
+    it('should return a boolean', () => {
+      assert.isBoolean(isInteger(0))
+    })
+
+    it('should return the correct answer', () => {
+      assert.equal(isInteger(19), Number.isInteger(19));
+    })
+
+    it('should return the correct answer', () => {
+      assert.equal(isInteger(19.7), Number.isInteger(19.7));
+    })
   });
-  // begin here
+
+
   describe('`fizzBuzz`', () => {
+    const fizzBuzz = funcs.fizzBuzz;
     it('should be a function', () => {
-      const fizzBuzz = funcs.fizzBuzz;
       assert.typeOf(fizzBuzz, 'function');
     });
+
+    it('should return a string', () => {
+      assert.isString(fizzBuzz(0));
+    })
+    it('should return the correct answer', () => {
+      assert.equal(fizzBuzz(15), 'fizzbuzz');
+    })
+
+    it('should return the correct answer', () => {
+      assert.equal(fizzBuzz(5), 'buzz');
+    })
+
+    it('should return the correct answer', () => {
+      assert.equal(fizzBuzz(3), 'fizz');
+    })
+    it('should return the correct answer', () => {
+      assert.equal(fizzBuzz(1), 1);
+    })
+
   });
-  // begin here
+
+
   describe('`isPrime`', () => {
     it('should be a function', () => {
       const isPrime = funcs.isPrime;
       assert.typeOf(isPrime, 'function');
     });
   });
-  // begin here
+
+
   describe('`returnFirst`', () => {
     it('should be a function', () => {
       const returnFirst = funcs.returnFirst;
       assert.typeOf(returnFirst, 'function');
     });
   });
-  // begin here
+
+
   describe('`returnLast`', () => {
     it('should be a function', () => {
       const returnLast = funcs.returnLast;
       assert.typeOf(returnLast, 'function');
     });
   });
-  // begin here
+
+
   describe('`getArrayLength`', () => {
     it('should be a function', () => {
       const getArrayLength = funcs.getArrayLength;
       assert.typeOf(getArrayLength, 'function');
     });
   });
-  // begin here
+
+
   describe('`incrementByOne`', () => {
     it('should be a function', () => {
       const incrementByOne = funcs.incrementByOne;
       assert.typeOf(incrementByOne, 'function');
     });
   });
-  // begin here
+
+
   describe('`addItemToArray`', () => {
     it('should be a function', () => {
       const addItemToArray = funcs.addItemToArray;
       assert.typeOf(addItemToArray, 'function');
     });
   });
-  // begin here
+
+
   describe('`addItemToFront`', () => {
     it('should be a function', () => {
       const addItemToFront = funcs.addItemToFront;
       assert.typeOf(addItemToFront, 'function');
     });
   });
-  // begin here
+
+
   describe('`wordsToSentence`', () => {
     it('should be a function', () => {
       const wordsToSentence = funcs.wordsToSentence;
       assert.typeOf(wordsToSentence, 'function');
     });
   });
-  // begin here
+
+
   describe('`contains`', () => {
     it('should be a function', () => {
       const contains = funcs.contains;
       assert.typeOf(contains, 'function');
     });
   });
-  // begin here
+
+
   describe('`addNumbers`', () => {
     it('should be a function', () => {
       const addNumbers = funcs.addNumbers;
       assert.typeOf(addNumbers, 'function');
     });
   });
-  // begin here
+
+
   describe('`averageTestScore`', () => {
     it('should be a function', () => {
       const averageTestScore = funcs.averageTestScore;
       assert.typeOf(averageTestScore, 'function');
     });
   });
-  // begin here
+
+
   describe('`largestNumber`', () => {
     it('should be a function', () => {
       const largestNumber = funcs.largestNumber;
